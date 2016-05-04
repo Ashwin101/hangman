@@ -102,7 +102,6 @@ def welcome_screen():	#prints the welcome screen
 	return
 
 def get_rand_word():	#gets random word from the wordlist
-	global WORDLIST
 	WordIndex = random.randint(0, len(WORDLIST)-1) 
 	return WORDLIST[WordIndex]
 
@@ -112,7 +111,6 @@ def print_blanks(ans_word, guessed_letter = None):
 		print '_ ' * len(ans_word)
 		return
 	
-	global guessed_list
 	guessed_list.append(guessed_letter)
 
 	for i in range(0, len(ans_word)):		
@@ -127,7 +125,6 @@ def print_blanks(ans_word, guessed_letter = None):
 
 def check_if_won(ans_word, guessed_letter):
 	flag = 0
-	global guessed_list
 	for i in range(0, len(ans_word)):
 		if ans_word[i] in guessed_list:
 			flag = flag + 1
@@ -148,7 +145,6 @@ def update_board(count = 0):
 
 def main():
 	life = 0
-	global guessed_list
 	welcome_screen()
 	ans_word = get_rand_word()
 	update_board()
