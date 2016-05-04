@@ -138,9 +138,9 @@ def get_user_input():
 	return guessed_letter
 
 def update_board(count = 0):
-	global BOARD
 	print BOARD[count]
-	heart = 'Lives Remaining: ' + str(6 - count)
+	heart_symbol = u'\u2764'
+	heart = 'Lives Remaining: ' + (6 - count) * heart_symbol
 	print heart
 
 def main():
